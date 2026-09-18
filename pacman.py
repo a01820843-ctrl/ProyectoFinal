@@ -19,7 +19,7 @@ path = Turtle(visible=False)
 writer = Turtle(visible=False)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
-#Para hacerlos más rapidos simplemente cambiamos el valor 5 por 10,se moverá 10 pixeles en lugar de 5. 
+# To make them faster, we simply change the value from 5 to 10. They will move 10 pixels instead of 5. 
 ghosts = [
     [vector(-180, 160), vector(10, 0)],
     [vector(-180, -160), vector(0, 10)],
@@ -136,7 +136,8 @@ def move():
         if valid(point + course):
             point.move(course)
         else:
-        #Nuevamente se ajusta aquí, para que mantengan su velocidad
+        #Adjust it here again so that they keep their speed.
+
             options = [
                 vector(10, 0),
                 vector(-10, 0),
