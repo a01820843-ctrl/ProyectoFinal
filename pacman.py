@@ -68,6 +68,23 @@ def square(x, y):
     path.end_fill()
 
 
+def food(x, y):
+    """Draw a small orange diamond in the center of a tile."""
+    center_x, center_y = x + 10, y + 10
+    path.up()
+    path.goto(center_x, center_y + 5)
+    path.color('orange')
+    path.down()
+    path.begin_fill()
+    path.goto(center_x + 5, center_y)
+    path.goto(center_x, center_y - 5)
+    path.goto(center_x - 5, center_y)
+    path.goto(center_x, center_y + 5)
+    path.end_fill()
+    path.up()
+    path.color('blue')
+
+
 def offset(point):
     """Return offset of point in tiles."""
     x = (floor(point.x, 20) + 200) / 20
@@ -105,9 +122,7 @@ def world():
             square(x, y)
 
             if tile == 1:
-                path.up()
-                path.goto(x + 10, y + 10)
-                path.dot(2, 'white')
+                food(x, y)
 
 
 def move():
